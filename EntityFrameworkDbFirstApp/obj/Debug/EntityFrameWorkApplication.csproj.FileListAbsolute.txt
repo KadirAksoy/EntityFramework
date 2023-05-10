@@ -1,0 +1,16 @@
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\bin\Debug\EntityFrameWorkApplication.exe.config
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\bin\Debug\EntityFrameWorkApplication.exe
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\bin\Debug\EntityFrameWorkApplication.pdb
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\bin\Debug\EntityFramework.dll
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\bin\Debug\EntityFramework.xml
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\obj\Debug\EntityFrameWorkApplication.csproj.AssemblyReference.cache
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\obj\Debug\EntityFrameWorkApplication.csproj.SuggestedBindingRedirects.cache
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\obj\Debug\EntityFrameWorkApplication.Form1.resources
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\obj\Debug\EntityFrameWorkApplication.Properties.Resources.resources
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\obj\Debug\EntityFrameWorkApplication.csproj.GenerateResource.cache
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\obj\Debug\EntityFrameWorkApplication.csproj.CoreCompileInputs.cache
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\obj\Debug\EntityFrameWorkApplication.csproj.CopyComplete
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\obj\Debug\EntityFrameWorkApplication.exe
+C:\Users\kadir\source\repos\EntityFrameWorkApplication\obj\Debug\EntityFrameWorkApplication.pdb

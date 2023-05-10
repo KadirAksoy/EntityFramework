@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbStudentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TBLLESSON">
+    <Key>
+      <PropertyRef Name="LESSONID" />
+    </Key>
+    <Property Name="LESSONID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LESSONNAME" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="TBLNOTES" Relationship="Self.FK_TBLNOTES_TBLLESSON" FromRole="TBLLESSON" ToRole="TBLNOTES" />
+  </EntityType>
+  <EntityType Name="TBLNOTES">
+    <Key>
+      <PropertyRef Name="NOTID" />
+    </Key>
+    <Property Name="NOTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STUDENT" Type="Int32" />
+    <Property Name="LESSON" Type="Int32" />
+    <Property Name="TEST1" Type="Int16" />
+    <Property Name="TEST2" Type="Int16" />
+    <Property Name="TEST3" Type="Int16" />
+    <Property Name="AVERAGE" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="RESULT" Type="Boolean" />
+    <NavigationProperty Name="TBLLESSON" Relationship="Self.FK_TBLNOTES_TBLLESSON" FromRole="TBLNOTES" ToRole="TBLLESSON" />
+    <NavigationProperty Name="TBLSTUDENT" Relationship="Self.FK_TBLNOTES_TBLSTUDENT" FromRole="TBLNOTES" ToRole="TBLSTUDENT" />
+  </EntityType>
+  <EntityType Name="TBLSTUDENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="IMAGE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLNOTES" Relationship="Self.FK_TBLNOTES_TBLSTUDENT" FromRole="TBLSTUDENT" ToRole="TBLNOTES" />
+  </EntityType>
+  <Association Name="FK_TBLNOTES_TBLLESSON">
+    <End Role="TBLLESSON" Type="Self.TBLLESSON" Multiplicity="0..1" />
+    <End Role="TBLNOTES" Type="Self.TBLNOTES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLLESSON">
+        <PropertyRef Name="LESSONID" />
+      </Principal>
+      <Dependent Role="TBLNOTES">
+        <PropertyRef Name="LESSON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLNOTES_TBLSTUDENT">
+    <End Role="TBLSTUDENT" Type="Self.TBLSTUDENT" Multiplicity="0..1" />
+    <End Role="TBLNOTES" Type="Self.TBLNOTES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLSTUDENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLNOTES">
+        <PropertyRef Name="STUDENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbStudentEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TBLLESSON" EntityType="Self.TBLLESSON" />
+    <EntitySet Name="TBLNOTES" EntityType="Self.TBLNOTES" />
+    <EntitySet Name="TBLSTUDENT" EntityType="Self.TBLSTUDENT" />
+    <AssociationSet Name="FK_TBLNOTES_TBLLESSON" Association="Self.FK_TBLNOTES_TBLLESSON">
+      <End Role="TBLLESSON" EntitySet="TBLLESSON" />
+      <End Role="TBLNOTES" EntitySet="TBLNOTES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLNOTES_TBLSTUDENT" Association="Self.FK_TBLNOTES_TBLSTUDENT">
+      <End Role="TBLSTUDENT" EntitySet="TBLSTUDENT" />
+      <End Role="TBLNOTES" EntitySet="TBLNOTES" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
